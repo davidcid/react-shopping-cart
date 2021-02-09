@@ -2,17 +2,29 @@ import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 
 export const Wrapper = styled(AppBar)`
-    padding: 0.3rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background-color: white;
     color: #333;
+
+    .categories {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        .categories {
+            display: flex;
+            padding: 0.3rem 1rem;
+        }
+    }
     
     h2 {
         text-transform: uppercase;
@@ -30,8 +42,8 @@ export const Wrapper = styled(AppBar)`
     ul li {
         font-size: 0.8rem;
         text-transform: uppercase;
-        margin: 0.4rem 1.4rem;
-        padding: 0.4rem 0;
+        margin: 0 1.4rem;
+        padding: 0;
         border: 1px solid transparent;
         cursor: pointer;
         transition: all 0.4s ease;
@@ -51,8 +63,12 @@ export const Wrapper = styled(AppBar)`
         color: #333;
         opacity: 1;
         margin-left: auto;
-        margin-right: 1rem;
+        margin-right: 0.5rem;
         border-radius: 3px;
+
+        @media screen and (min-width: 768px) {
+            margin-right: 1rem;
+        }
     }
     
     .search .searchIcon {
@@ -64,13 +80,26 @@ export const Wrapper = styled(AppBar)`
     }
 `;
 
+export const Menu = styled(MenuIcon)`
+    color: #333;
+    margin: 0;
+    margin-right: auto;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+`;
+
 export const Search = styled(SearchIcon)`
     color: #333;
-    `;
+    margin: 0;
+`;
     
-    export const StyledButton = styled(IconButton)`
-    margin-right: 2rem;
+export const StyledButton = styled(IconButton)`
     padding: 0;
     color: #333;
 
+    @media screen and (min-width: 768px) {
+        margin-right: 2rem;
+    }
 `;

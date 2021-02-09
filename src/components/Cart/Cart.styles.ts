@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
-    font-family: Arial, Helvetica, sans-serif;
-    width: 500px;
+    width: 100%;
     padding: 20px;
+
+    @media screen and (min-width: 768px) {
+        width: 500px;
+    }
+
+    .header {
+        display: flex;
+        aligin-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
 `;

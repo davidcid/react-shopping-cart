@@ -77,6 +77,7 @@ export const Wrapper = styled.div`
         background: white;
         top: 370px;
         height: 100%;
+        width: 100%;
         //transform: translateY(-200px);
     }
 

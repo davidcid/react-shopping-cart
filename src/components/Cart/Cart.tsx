@@ -1,4 +1,5 @@
 import CartItem from '../CartItem/CartItem';
+import CloseIcon from '@material-ui/icons/Close';
 // Styles
 import { Wrapper } from './Cart.styles';
 // Types
@@ -8,16 +9,20 @@ type Props = {
     cartItems: CartItemType[];
     addToCart: (clickedItem: CartItemType) => void;
     removeFromCart: (id: number) => void;
+    closeCart: () => void;
 };
 
-const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
+const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, closeCart }) => {
 
     const calculateTotal = (items: CartItemType[]) =>
         items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
 
     return (
         <Wrapper>
-            <h2>Your Shopping Cart</h2>
+            <div className="header">
+                <CloseIcon onClick={() => closeCart()}/>
+                <h2>Your Shopping Cart</h2>
+            </div>
             {cartItems.length === 0 ? <p>No items in cart.</p> : null}
             {cartItems.map(item => (
                 <CartItem 

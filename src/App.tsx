@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 // Components
 import Item from './components/Item/Item';
 import Cart from './components/Cart/Cart';
+import Menu from './components/Menu/Menu';
 import NavBar from './components/NavBar/NavBar';
 import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -28,6 +29,7 @@ const getProducts = async (): Promise<CartItemType[]> =>
 
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState("");
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
   const { data, isLoading, error } = useQuery<CartItemType[]>(
@@ -65,13 +67,15 @@ const App = () => {
   };
 
   const openCart = () => setCartOpen(true);
+
+  const closeCart = () => setCartOpen(false);
   
+  const openMenu = () => setMenuOpen(true);
+  
+  const closeMenu = () => setMenuOpen(false);
 
   if (isLoading) return <LinearProgress />;
   if (error) return <div>Something went wrong ...</div>;
-
-
-
 
 
   return (
@@ -81,14 +85,19 @@ const App = () => {
         cartItems={cartItems} 
         filter={filter} 
         setFilter={setFilter}
+        openMenu={openMenu}
       />
       <Wrapper>
         <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart 
             cartItems={cartItems} 
             addToCart={handleAddToCart} 
-            removeFromCart={handleRemoveFromCart}  
+            removeFromCart={handleRemoveFromCart}
+            closeCart={closeCart}
           />
+        </Drawer>
+        <Drawer anchor='left' open={menuOpen} onClose={() => setMenuOpen(false)}>
+          <Menu setFilter={setFilter} filter={filter} closeMenu={closeMenu}/>
         </Drawer>
         <Container >
           <Grid container spacing={4}>
