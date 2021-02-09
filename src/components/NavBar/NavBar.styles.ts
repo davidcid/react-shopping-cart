@@ -7,7 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 
 export const Wrapper = styled(AppBar)`
-    padding: 1rem;
+    padding: 0.4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,18 +43,18 @@ export const Wrapper = styled(AppBar)`
         font-size: 0.8rem;
         text-transform: uppercase;
         margin: 0 1.4rem;
-        padding: 0;
+        padding: 0.4rem 0;
         border: 1px solid transparent;
         cursor: pointer;
         transition: all 0.4s ease;
     }
 
     ul li.active {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid #333;
     }
 
     ul li: hover {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid #333;
     }
     
     .search {
