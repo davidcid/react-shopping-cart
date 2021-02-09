@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid';
 
 // Styles
 import { Wrapper }  from './App.styles';
+import { Container } from '@material-ui/core';
 //Types
 export type CartItemType = {
   id: number;
@@ -89,18 +90,19 @@ const App = () => {
             removeFromCart={handleRemoveFromCart}  
           />
         </Drawer>
-
-        <Grid container spacing={3}>
-          {data?.filter(item => (
-            filter === "" 
-            ? item.category.includes(filter) 
-            : item.category === filter
-          )).map((item => (
-            <Grid item key={item.id} xs={12} sm={4}>
-              <Item item={item} handleAddToCart={handleAddToCart} />
-            </Grid>
+        <Container >
+          <Grid container spacing={4}>
+            {data?.filter(item => (
+              filter === "" 
+              ? item.category.includes(filter) 
+              : item.category === filter
+            )).map((item => (
+              <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
+                <Item item={item} handleAddToCart={handleAddToCart} />
+              </Grid>
           )))}
         </Grid>
+        </Container>
       </Wrapper>
     </div>
 

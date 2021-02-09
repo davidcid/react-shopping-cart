@@ -27,10 +27,11 @@ export const Wrapper = styled(AppBar)`
     ul li {
         font-size: 0.8rem;
         text-transform: uppercase;
-        margin: 0.4rem 1rem;
-        padding-bottom: 0.4rem;
+        margin: 0.4rem 1.4rem;
+        padding: 0.4rem 0;
         border: 1px solid transparent;
         cursor: pointer;
+        transition: all 0.4s ease;
     }
 
     ul li.active {
