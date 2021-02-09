@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
     // width: 300px;
     height: 500px;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding-bottom: 4rem;
     
@@ -19,7 +20,7 @@ export const Wrapper = styled.div`
     }
 
     img {
-        height: 100%;
+        max-height: 400px;
         max-width: 100%;
         object-fit: scale-down;
     }

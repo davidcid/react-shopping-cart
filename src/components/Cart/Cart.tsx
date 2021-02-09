@@ -20,7 +20,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, closeCart
     return (
         <Wrapper>
             <div className="header">
-                <CloseIcon onClick={() => closeCart()}/>
+                <CloseIcon onClick={() => closeCart()} className="close"/>
                 <h2>Your Shopping Cart</h2>
             </div>
             {cartItems.length === 0 ? <p>No items in cart.</p> : null}

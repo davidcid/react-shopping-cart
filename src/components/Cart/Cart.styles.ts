@@ -14,4 +14,8 @@ export const Wrapper = styled.aside`
         justify-content: space-between;
         margin-bottom: 3rem;
     }
+
+    .header .close {
+        cursor: pointer;
+    }
 `;
