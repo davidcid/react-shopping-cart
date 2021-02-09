@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
 
 
 
 export const Wrapper = styled(AppBar)`
-    padding: 1rem;
+    padding: 0.3rem 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background-color: white;
+    color: #333;
     
     h2 {
         text-transform: uppercase;
@@ -45,7 +48,8 @@ export const Wrapper = styled(AppBar)`
     .search {
         display: flex;
         align-items: center;
-        background: rgba(255,255,255,0.4);
+        color: #333;
+        opacity: 1;
         margin-left: auto;
         margin-right: 1rem;
         border-radius: 3px;
@@ -56,14 +60,17 @@ export const Wrapper = styled(AppBar)`
     }
     
     .search .inputBase {
-        color: white;
         width: 150px;
     }
 `;
 
-export const StyledButton = styled(IconButton)`
-    color: white;
+export const Search = styled(SearchIcon)`
+    color: #333;
+    `;
+    
+    export const StyledButton = styled(IconButton)`
     margin-right: 2rem;
     padding: 0;
+    color: #333;
 
 `;

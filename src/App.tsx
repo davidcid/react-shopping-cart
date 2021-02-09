@@ -75,7 +75,7 @@ const App = () => {
 
 
   return (
-    <div className="div">
+    <div className="app">
       <NavBar 
         setCartOpen={openCart} 
         cartItems={cartItems} 
