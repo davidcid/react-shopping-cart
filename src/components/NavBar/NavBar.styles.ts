@@ -7,19 +7,31 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 
 export const Wrapper = styled(AppBar)`
-    padding: 0.4rem;
+background-color: white;
+padding: 0;
+margin: 0;
+
+.navBar {
+    padding: 0.8rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    background-color: white;
     color: #333;
+    background-color: white;
+    
+}
+
 
     .categories {
         display: none;
     }
 
     @media screen and (min-width: 768px) {
+
+        .navBar {
+            padding: 0.4rem 0.8rem;
+        }
         .categories {
             display: flex;
             padding: 0.3rem 1rem;

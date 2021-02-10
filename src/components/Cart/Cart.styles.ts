@@ -18,4 +18,8 @@ export const Wrapper = styled.aside`
     .header .close {
         cursor: pointer;
     }
+
+    .total {
+        margin-top: 1rem;
+    }
 `;

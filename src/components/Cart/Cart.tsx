@@ -32,7 +32,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, closeCart
                     removeFromCart={removeFromCart}
                 />
             ))}
-            <h2>Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
+            <h2 className="total">Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
         </Wrapper>
     );
 };
