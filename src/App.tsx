@@ -5,6 +5,7 @@ import Item from './components/Item/Item';
 import Cart from './components/Cart/Cart';
 import Menu from './components/Menu/Menu';
 import NavBar from './components/NavBar/NavBar';
+import FinalSales from './components/FInalSales/FinalSales';
 import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
@@ -88,6 +89,7 @@ const App = () => {
         openMenu={openMenu}
       />
       <Wrapper>
+        {filter === "" && <FinalSales setFilter={setFilter}/>}
         <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart 
             cartItems={cartItems} 
@@ -99,7 +101,7 @@ const App = () => {
         <Drawer anchor='left' open={menuOpen} onClose={() => setMenuOpen(false)}>
           <Menu setFilter={setFilter} filter={filter} closeMenu={closeMenu}/>
         </Drawer>
-        <Container >
+        <Container className="articles">
           <Grid container spacing={4}>
             {data?.filter(item => (
               filter === "" 
