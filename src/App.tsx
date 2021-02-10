@@ -14,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 import { Wrapper }  from './App.styles';
 import { Container } from '@material-ui/core';
 import Footer from './components/Footer/Footer';
+import Hero from './components/Hero/Hero';
 //Types
 export type CartItemType = {
   id: number;
@@ -90,7 +91,13 @@ const App = () => {
         openMenu={openMenu}
       />
       <Wrapper>
-        {filter === "" && <FinalSales setFilter={setFilter}/>}
+        {
+          filter === "" && 
+          <div className="mainPage">
+            <FinalSales setFilter={setFilter} />
+            <Hero setFilter={setFilter} />
+          </div>
+        }
         <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart 
             cartItems={cartItems} 

@@ -26,7 +26,7 @@ const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setF
     return (
         <Wrapper position="fixed">
             <TopBanner />
-                <div className="navBar">
+            <div className="navBar">
                 <Menu onClick={() => openMenu()}/>
                 <h2 onClick={() => setFilter("")}>StrongBoot</h2>
                 <ul className="categories">

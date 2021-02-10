@@ -12,13 +12,15 @@ padding: 0;
 margin: 0;
 
 .navBar {
-        padding: 0.8rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        color: #333;   
-    }
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #333;
+    background-color: white;
+    
+}
 
 
     .categories {

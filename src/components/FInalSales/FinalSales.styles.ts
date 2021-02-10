@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     background: #FEDA00;
     text-align: center;
     padding: 1rem 2rem;
-    margin-top: 4.9rem;
+    margin-bottom: 0.5rem;
 
     h1 {
         text-transform: uppercase;

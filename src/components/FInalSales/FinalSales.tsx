@@ -15,7 +15,7 @@ const FinalSales: React.FC<Props> = ({setFilter}) => {
                 <StyledButton onClick={() => setFilter("women clothing")}>Buy Woman</StyledButton>
                 <StyledButton onClick={() => setFilter("men clothing")}>Buy Man</StyledButton>
             </div>
-            <p className="disclaimer">Sales duration from 2021 January 1st to February 28th.</p>
+            <p className="disclaimer">Discounts duration from 2021 January 1st to February 28th.</p>
         </Wrapper>
     )
 

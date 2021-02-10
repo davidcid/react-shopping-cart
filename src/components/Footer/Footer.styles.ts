@@ -6,6 +6,11 @@ export const Wrapper = styled.div`
     padding: 1rem 2rem;
     font-size: 0.8rem;
 
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
     .footer-p {
         text-align: right;
     }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const Wrapper = styled.div`
-    margin-top: 6rem;
+    margin-top: 4.9rem;
 
     .articles {
         margin: 1rem auto;
@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledButton = styled.button`
-    padding: 1rem 2rem;
     background: white;
     color: #333;
     text-transform: uppercase;
