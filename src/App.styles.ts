@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 
 export const Wrapper = styled.div`
-    // margin: 80px 0;
+    margin-top: 6rem;
+
     .articles {
         margin: 1rem auto;
     }

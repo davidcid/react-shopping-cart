@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 // Styles
 import { Wrapper }  from './App.styles';
 import { Container } from '@material-ui/core';
+import Footer from './components/Footer/Footer';
 //Types
 export type CartItemType = {
   id: number;
@@ -115,6 +116,7 @@ const App = () => {
         </Grid>
         </Container>
       </Wrapper>
+      <Footer />
     </div>
 
   )
