@@ -53,7 +53,7 @@ const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setF
                         className={filter === "jewelery" ? "active" : ""}
                     >Jewelery</li>
                 </ul>
-                <div className="search">
+                <div className="searchButton">
                     <Search onClick={() => openSearch()}/>
                 </div>
                 <StyledButton onClick={() => setCartOpen()}>
@@ -62,7 +62,7 @@ const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setF
                     </Badge>
                 </StyledButton>
             </div>
-            <div className={`search ${searchOpen ? "active" : ""}`}>
+            <div className={`searchBar ${searchOpen ? "active" : ""}`}>
                 <FormControl>
                     <Input
                     id="input-with-icon-adornment"
