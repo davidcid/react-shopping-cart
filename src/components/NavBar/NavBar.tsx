@@ -1,11 +1,14 @@
-
+import { useState } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import Badge from '@material-ui/core/Badge';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
 
 
 //Styles
-import { Wrapper, StyledButton, Search, Menu } from './NavBar.styles';
+import { Wrapper, StyledButton, Search, Menu, Close } from './NavBar.styles';
 //Types
 import { CartItemType } from '../../App';
 
@@ -19,6 +22,13 @@ type Props = {
 
 
 const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setFilter}) => {
+
+    const [searchOpen, setSearchOpen] = useState(false);
+
+    const openSearch = () => setSearchOpen(true);
+
+    const closeSearch = () => setSearchOpen(false);
+
 
     const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, item) => ack + item.amount, 0);
@@ -44,13 +54,27 @@ const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setF
                     >Jewelery</li>
                 </ul>
                 <div className="search">
-                    <Search />
+                    <Search onClick={() => openSearch()}/>
                 </div>
                 <StyledButton onClick={() => setCartOpen()}>
                     <Badge badgeContent={getTotalItems(cartItems)} color='error'>
                         <AddShoppingCartIcon />
                     </Badge>
                 </StyledButton>
+            </div>
+            <div className={`search ${searchOpen ? "active" : ""}`}>
+                <FormControl>
+                    <Input
+                    id="input-with-icon-adornment"
+                    placeholder="Search"
+                    startAdornment={
+                        <InputAdornment position="start">
+                        <Search />
+                        </InputAdornment>
+                    }
+                    />
+                </FormControl>
+                <Close onClick={() => closeSearch()} className="closeSearch"/>
             </div>
         </Wrapper>
         

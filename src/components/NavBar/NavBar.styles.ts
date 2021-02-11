@@ -3,6 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+
 
 
 
@@ -77,6 +79,7 @@ margin: 0;
         margin-left: auto;
         margin-right: 0.5rem;
         border-radius: 3px;
+        cursor: pointer;
 
         @media screen and (min-width: 768px) {
             margin-right: 1rem;
@@ -114,4 +117,11 @@ export const StyledButton = styled(IconButton)`
     @media screen and (min-width: 768px) {
         margin-right: 2rem;
     }
+`;
+
+export const Close = styled(CloseIcon)`
+    color: #333;
+    margin: 0;
+    font-size: 0.9rem;
+    cursor: pointer;
 `;
