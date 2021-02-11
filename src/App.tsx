@@ -10,6 +10,7 @@ import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
 
+
 // Styles
 import { Wrapper }  from './App.styles';
 import { Container } from '@material-ui/core';
@@ -33,6 +34,7 @@ const getProducts = async (): Promise<CartItemType[]> =>
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
   const { data, isLoading, error } = useQuery<CartItemType[]>(
@@ -89,6 +91,8 @@ const App = () => {
         filter={filter} 
         setFilter={setFilter}
         openMenu={openMenu}
+        setSearch={setSearch}
+        search={search}
       />
       <Wrapper>
         {
@@ -112,7 +116,9 @@ const App = () => {
         <Container className="articles">
           <Grid container spacing={4}>
             {data?.filter(item => (
-              filter === "" 
+              search !== "" 
+              ? item.title.toLowerCase().includes(search.toLowerCase())              
+              : filter === "" 
               ? item.category.includes(filter) 
               : item.category === filter
             )).map((item => (

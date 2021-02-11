@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import SearchIcon from '@material-ui/icons/Search';
+
 
 
 export const Wrapper = styled.div`
     margin-top: 4.9rem;
-
+    position: relative;
+        
     .articles {
         margin: 1rem auto;
     }
@@ -25,3 +28,9 @@ export const StyledButton = styled.button`
         background: black;
     }
 `;
+
+export const Search = styled(SearchIcon)`
+    color: #333;
+    margin: 0;
+`;
+
