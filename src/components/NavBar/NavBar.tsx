@@ -15,13 +15,15 @@ import { CartItemType } from '../../App';
 type Props = {
     openMenu: () => void;
     setCartOpen: () => void;
+    setSearch: (search:string) => void;
     cartItems: CartItemType[];
     filter: string;
     setFilter: (section:string) => void;
+    search: string;
 };
 
 
-const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setFilter}) => {
+const NavBar: React.FC<Props> = ({openMenu, setSearch, setCartOpen, cartItems, filter, setFilter, search}) => {
 
     const [searchOpen, setSearchOpen] = useState(false);
 
@@ -33,23 +35,29 @@ const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setF
     const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, item) => ack + item.amount, 0);
 
+    const selectCategory = (category:string) => {
+        setFilter(category);
+        setSearch("");
+        closeSearch();
+    }
+
     return (
         <Wrapper position="fixed">
             <TopBanner />
             <div className="navBar">
                 <Menu onClick={() => openMenu()}/>
-                <h2 onClick={() => setFilter("")}>StrongBoot</h2>
+                <h2 onClick={() => selectCategory("")}>StrongBoot</h2>
                 <ul className="categories">
-                    <li onClick={() => setFilter("women clothing")}
+                    <li onClick={() => selectCategory("women clothing")}
                         className={filter === "women clothing" ? "active" : ""}
                     >Woman</li>
-                    <li onClick={() => setFilter("men clothing")}
+                    <li onClick={() => selectCategory("men clothing")}
                         className={filter === "men clothing" ? "active" : ""}
                     >Man</li>
-                    <li onClick={() => setFilter("electronics")}
+                    <li onClick={() => selectCategory("electronics")}
                         className={filter === "electronics" ? "active" : ""}
                     >Electronics</li>
-                    <li onClick={() => setFilter("jewelery")}
+                    <li onClick={() => selectCategory("jewelery")}
                         className={filter === "jewelery" ? "active" : ""}
                     >Jewelery</li>
                 </ul>
@@ -65,8 +73,10 @@ const NavBar: React.FC<Props> = ({openMenu, setCartOpen, cartItems, filter, setF
             <div className={`searchBar ${searchOpen ? "active" : ""}`}>
                 <FormControl>
                     <Input
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
                     id="input-with-icon-adornment"
                     placeholder="Search"
+                    value={search}
                     startAdornment={
                         <InputAdornment position="start">
                         <Search />
