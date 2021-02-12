@@ -4,3 +4,20 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* .app {
+  min-height: 100vh;
+} */
