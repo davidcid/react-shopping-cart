@@ -10,6 +10,13 @@ export const Wrapper = styled.div`
     .articles {
         margin: 1rem auto;
     }
+
+    .error {
+        padding: 2rem;
+        font-size: 1.3rem;
+        font-weight: 300;
+        height: 40vh;
+    }
 `;
 
 export const StyledButton = styled.button`

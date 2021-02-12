@@ -80,7 +80,6 @@ const App = () => {
   const closeMenu = () => setMenuOpen(false);
 
   if (isLoading) return <LinearProgress />;
-  if (error) return <div>Something went wrong ...</div>;
 
 
   return (
@@ -115,7 +114,9 @@ const App = () => {
         </Drawer>
         <Container className="articles">
           <Grid container spacing={4}>
-            {data?.filter(item => (
+            {
+              error ? <h2 className="error">Ooops! Something went wrong... Please, try again later</h2> :
+            data?.filter(item => (
               search !== "" 
               ? item.title.toLowerCase().includes(search.toLowerCase())              
               : filter === "" 

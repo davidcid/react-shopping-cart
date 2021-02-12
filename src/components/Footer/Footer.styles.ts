@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
     color: white;
     padding: 1rem 2rem;
     font-size: 0.8rem;
+    margin-top: auto;
 
     .container {
       max-width: 1400px;
