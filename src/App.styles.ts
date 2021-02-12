@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 
@@ -41,3 +42,7 @@ export const Search = styled(SearchIcon)`
     margin: 0;
 `;
 
+export const Progress = styled(LinearProgress)`
+    width: 100%;
+    margin-bottom: 15rem;
+`;

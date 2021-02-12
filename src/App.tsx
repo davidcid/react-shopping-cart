@@ -7,12 +7,11 @@ import Menu from './components/Menu/Menu';
 import NavBar from './components/NavBar/NavBar';
 import FinalSales from './components/FInalSales/FinalSales';
 import Drawer from '@material-ui/core/Drawer';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
 
 
 // Styles
-import { Wrapper }  from './App.styles';
+import { Wrapper, Progress }  from './App.styles';
 import { Container } from '@material-ui/core';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero/Hero';
@@ -79,9 +78,6 @@ const App = () => {
   
   const closeMenu = () => setMenuOpen(false);
 
-  if (isLoading) return <LinearProgress />;
-
-
   return (
     <div className="app">
       <NavBar 
@@ -116,6 +112,7 @@ const App = () => {
           <Grid container spacing={4}>
             {
               error ? <h2 className="error">Ooops! Something went wrong... Please, try again later</h2> :
+              isLoading ? <Progress /> :
             data?.filter(item => (
               search !== "" 
               ? item.title.toLowerCase().includes(search.toLowerCase())              
