@@ -45,7 +45,9 @@ const NavBar: React.FC<Props> = ({openMenu, setSearch, setCartOpen, cartItems, f
         <Wrapper position="fixed">
             <TopBanner />
             <div className="navBar">
-                <Menu onClick={() => openMenu()}/>
+                <div className="menubutton">
+                    <Menu onClick={() => openMenu()}/>
+                </div>
                 <h2 onClick={() => selectCategory("")}>StrongBoot</h2>
                 <ul className="categories">
                     <li onClick={() => selectCategory("women clothing")}
