@@ -21,6 +21,14 @@ margin: 0;
     justify-content: flex-start;
     color: #333;
     background-color: white;
+
+    .menubutton {
+        display: block;
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
     
 }
 
@@ -67,7 +75,7 @@ margin: 0;
         border-bottom: 1px solid #333;
     }
 
-    ul li: hover {
+    ul li:hover {
         border-bottom: 1px solid #333;
     }
     
@@ -117,10 +125,6 @@ export const Menu = styled(MenuIcon)`
     color: #333;
     margin: 0;
     margin-right: auto;
-
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
 `;
 
 export const Search = styled(SearchIcon)`
