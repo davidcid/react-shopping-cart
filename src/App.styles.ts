@@ -5,7 +5,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 export const Wrapper = styled.div`
-    margin-top: 4.9rem;
+    margin-top: 6.9rem;
     position: relative;
         
     .articles {
@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
         font-size: 1.3rem;
         font-weight: 300;
         height: 40vh;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: 4.9rem;
     }
 `;
 
